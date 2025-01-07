@@ -1,0 +1,133 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+/* Home Section with Overlay */
+.home-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558482988-c1de5c91c282?crop=entropy&cs=tinysrgb&w=1080&fit=max') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-section h1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+}
+
+.home-section h1 span {
+    color: #e74c3c;
+}
+
+.home-section p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+/* Parallax Background for About Section */
+.parallax-bg {
+    background: url('https://images.unsplash.com/photo-1533089860892-a23394b6efdb?crop=entropy&cs=tinysrgb&w=1080&fit=max') no-repeat center center/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+/* Hover Effects on Course Cards */
+.course-card {
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(50% - 40px); /* Responsive design */
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow:

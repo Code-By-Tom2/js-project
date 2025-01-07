@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Body Language & English Speaking Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="hero">
+            <h1 data-aos="fade-up">Welcome to the <span>Body Language & English Speaking Academy</span></h1>
+            <p data-aos="fade-up" data-aos-delay="300">Master communication skills with our expert-designed courses</p>
+            <a href="#courses" class="btn" data-aos="fade-up" data-aos-delay="500">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Courses Section with Images -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 data-aos="fade-down">Our Courses</h2>
+
+            <div class="course-card" data-aos="flip-left">
+                <img src="https://images.unsplash.com/photo-1559339163-c3e10c07b63b?crop=entropy&cs=tinysrgb&w=400&fit=max" alt="Body Language Mastery" class="course-image">
+                <h3>Body Language Mastery</h3>
+                <p>Understand and control your body language to communicate more effectively.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="course-card" data-aos="flip-right">
+                <img src="https://images.unsplash.com/photo-1531491291228-73c1e67236f1?crop=entropy&cs=tinysrgb&w=400&fit=max" alt="English Speaking Fluency" class="course-image">
+                <h3>English Speaking Fluency</h3>
+                <p>Boost your speaking skills with practical exercises and real-life conversations.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section with Parallax Background -->
+    <section id="about" class="section about-section parallax-bg">
+        <div class="container">
+            <h2 data-aos="fade-right">About Us</h2>
+            <p data-aos="fade-right" data-aos-delay="200">We are dedicated to helping individuals develop strong communication skills. Our team includes experienced body language experts and English instructors passionate about teaching.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section with Animated Form -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 data-aos="zoom-in">Contact Us</h2>
+            <p data-aos="zoom-in" data-aos-delay="200">Feel free to reach out to us with any questions or inquiries!</p>
+            <form id="contactForm" action="#" method="post" data-aos="fade-up">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p id="errorMessage" style="color: red; display: none;">Please fill in all fields before submitting.</p>
+        </div>
+    </section>
+
+    <!-- Footer with Floating Social Media Icons -->
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Body Language & English Speaking Academy</p>
+    </footer>
+
+    <!-- Link to AOS (Animation on Scroll) library for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
