@@ -35,7 +35,7 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 
 // Search YouTube Video (Fix: Added Working Query)
 function searchYouTube(query) {
-    const YOUTUBE_API_KEY = "YOUR_YOUTUBE_API_KEY"; // 🔑 Replace with Your YouTube API Key
+    const YOUTUBE_API_KEY = "AIzaSyAR0RR0QOx_LhIPs7FkdmS5wh-CEQQT5iQ"; // 🔑 Replace with Your YouTube API Key
 
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(query)} official music video&key=${YOUTUBE_API_KEY}`)
     .then(response => response.json())
@@ -52,8 +52,8 @@ function searchYouTube(query) {
 
 // Search Spotify Track (Fix: Correct API Calls & Authentication)
 async function searchSpotify(query) {
-    const SPOTIFY_CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID"; // 🔑 Replace with Your Spotify Client ID
-    const SPOTIFY_CLIENT_SECRET = "YOUR_SPOTIFY_CLIENT_SECRET"; // 🔑 Replace with Your Spotify Client Secret
+    const SPOTIFY_CLIENT_ID = "307c50798ef84f06b4c7f57603353752"; // 🔑 Replace with Your Spotify Client ID
+    const SPOTIFY_CLIENT_SECRET = "9bff607646854f429707aaaab4dfac1e"; // 🔑 Replace with Your Spotify Client Secret
 
     try {
         // Step 1: Get Spotify API Token
