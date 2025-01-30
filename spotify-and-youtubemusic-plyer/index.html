@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Search - Spotify & YouTube</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 Music Search</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a song...">
+            <button id="searchBtn">🔍 Search</button>
+        </div>
+
+        <!-- Spotify Player -->
+        <div class="music-box">
+            <h2>Spotify Player</h2>
+            <iframe id="spotifyPlayer" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+        <!-- YouTube Player -->
+        <div class="music-box">
+            <h2>YouTube Player</h2>
+            <div id="youtubePlayer"></div>
+        </div>
+
+        <button id="playPauseBtn">Play/Pause YouTube</button>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
