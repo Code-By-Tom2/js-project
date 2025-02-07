@@ -17,41 +17,45 @@ canvas.addEventListener('mousemove', draw);
 function startDrawing(event) {
     drawing = true;
     ctx.beginPath();
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    ctx.moveTo(x, y);
+    ctx.moveTo(getX(event), getY(event));
+    socket.emit('startDraw', { x: getX(event), y: getY(event) });
 }
 
 function stopDrawing() {
     drawing = false;
+    ctx.beginPath();
+    socket.emit('stopDraw');
 }
 
 function draw(event) {
     if (!drawing) return;
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    ctx.lineTo(x, y);
+    ctx.lineTo(getX(event), getY(event));
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
     ctx.lineCap = "round";
     ctx.stroke();
-
-    socket.emit('draw', { x, y, color, size });
     ctx.beginPath();
-    ctx.moveTo(x, y);
+    ctx.moveTo(getX(event), getY(event));
+    socket.emit('draw', { x: getX(event), y: getY(event), color, size });
 }
 
 socket.on('draw', ({ x, y, color, size }) => {
-    ctx.beginPath();
-    ctx.moveTo(x, y);
     ctx.lineTo(x, y);
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
     ctx.lineCap = "round";
     ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+});
+
+socket.on('startDraw', ({ x, y }) => {
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+});
+
+socket.on('stopDraw', () => {
+    ctx.beginPath();
 });
 
 function clearCanvas() {
@@ -60,3 +64,11 @@ function clearCanvas() {
 }
 
 socket.on('clearCanvas', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
+
+function getX(event) {
+    return event.clientX - canvas.getBoundingClientRect().left;
+}
+
+function getY(event) {
+    return event.clientY - canvas.getBoundingClientRect().top;
+}
