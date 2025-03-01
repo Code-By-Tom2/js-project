@@ -1,18 +1,60 @@
 body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark gray background */
+  }
+  
+  .watch {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-.clock {
-    font-size: 60px;
-    font-weight: bold;
-    background: #222;
-    padding: 20px 40px;
+    height: 100vh; /* Center vertically and horizontally */
+    border: 5px solid #C0C0C0; /* Silver border like a clock frame */
+    border-radius: 15px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #333, #111); /* Subtle gradient */
+  }
+  
+  .time {
+    background: radial-gradient(circle, #222, #000); /* Depth effect */
+    color: #39FF14; /* Neon green digits */
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-}
+    font-family: 'Orbitron', sans-serif; /* Digital-style font */
+    font-size: 48px;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); /* Glow around display */
+  }
+  
+  .digit {
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14; /* Glow effect on digits */
+  }
+  
+  .colon {
+    color: #FFFFFF; /* White colons */
+    animation: blink 1s infinite steps(2, end); /* Blinking effect */
+  }
+  
+  .date {
+    font-size: 24px;
+    margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
+    color: #9EFF9E; /* Lighter green for date */
+    text-shadow: 0 0 3px #9EFF9E; /* Soft glow */
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .time {
+      font-size: 36px;
+    }
+    .date {
+      font-size: 18px;
+    }
+  }

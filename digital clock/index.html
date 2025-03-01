@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Clock</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Digital Watch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="clock" id="digitalClock">00:00:00 AM</div>
-    <script src="script.js"></script> <!-- Link JS -->
+  <div class="watch">
+    <div class="time">
+      <span id="hours" class="digit"></span>
+      <span class="colon">:</span>
+      <span id="minutes" class="digit"></span>
+      <span class="colon">:</span>
+      <span id="seconds" class="digit"></span>
+    </div>
+    <div class="date">
+      <span id="day"></span>/<span id="month"></span>/<span id="year"></span>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
