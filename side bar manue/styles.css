@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    overflow: hidden;
+}
+
+/* Sidebar Styles (Mobile-First) */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    padding: 15px 20px;
+}
+
+#sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+#sidebar a:hover {
+    background-color: #444;
+}
+
+/* Toggle Button Styles */
+#toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#toggle-btn i {
+    font-size: 20px;
+}
+
+/* Main Content Styles */
+#main-content {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+body.sidebar-active #main-content {
+    transform: translateX(250px);
+}
+
+/* Responsive Design (Desktop) */
+@media (min-width: 769px) {
+    .container {
+        display: flex;
+    }
+    #sidebar {
+        position: static;
+        left: auto;
+        width: 250px;
+        box-shadow: none;
+    }
+    #main-content {
+        flex: 1;
+        transform: none !important;
+    }
+    #toggle-btn {
+        display: none;
+    }
+}
