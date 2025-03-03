@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Your Library</a></li>
+      </ul>
+      <h3>Playlists</h3>
+      <ul id="playlist-list">
+        <!-- Playlists will be added dynamically -->
+      </ul>
+    </div>
+    <div id="main-content">
+      <input type="text" id="search-input" placeholder="Search songs">
+      <div id="song-list">
+        <!-- Songs will be added dynamically -->
+      </div>
+    </div>
+  </div>
+  <div id="player">
+    <audio id="audio" src=""></audio>
+    <div id="song-info">
+      <img id="album-art" src="" alt="Album Art">
+      <div>
+        <span id="song-title"></span>
+        <span id="song-artist"></span>
+      </div>
+    </div>
+    <div id="controls">
+      <button id="previous">Previous</button>
+      <button id="play-pause">Play</button>
+      <button id="next">Next</button>
+      <button id="shuffle">Shuffle</button>
+      <button id="repeat">Repeat</button>
+    </div>
+    <div id="progress-bar">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress" min="0" max="100" value="0">
+      <span id="duration">0:00</span>
+    </div>
+    <div id="volume-control">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

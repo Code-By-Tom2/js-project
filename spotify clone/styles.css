@@ -1,0 +1,146 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  #container {
+    display: flex;
+    height: calc(100vh - 70px); /* Adjust for player height */
+  }
+  
+  #sidebar {
+    width: 200px;
+    background-color: #040404;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  #sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #sidebar li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  #sidebar a {
+    color: #b3b3b3;
+    text-decoration: none;
+  }
+  
+  #sidebar a:hover, #sidebar li:hover {
+    color: #ffffff;
+  }
+  
+  #main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  #search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #282828;
+    border: none;
+    color: #ffffff;
+  }
+  
+  #song-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #282828;
+  }
+  
+  .song-item:hover {
+    background-color: #282828;
+  }
+  
+  .song-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .song-item div {
+    flex: 1;
+  }
+  
+  .song-item button {
+    padding: 5px 10px;
+    background-color: #1db954;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  #player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #181818;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #song-info {
+    display: flex;
+    align-items: center;
+    min-width: 200px;
+  }
+  
+  #album-art {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  #controls {
+    margin-left: 20px;
+  }
+  
+  #controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  #controls button:hover {
+    color: #1db954;
+  }
+  
+  #progress-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+  }
+  
+  #progress {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  #volume-control {
+    margin-left: 20px;
+  }
+  
+  #volume {
+    width: 100px;
+  }
