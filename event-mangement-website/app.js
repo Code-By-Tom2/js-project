@@ -1,97 +1,123 @@
-const authForm = document.getElementById('authForm');
-const eventForm = document.getElementById('eventForm');
-const searchBar = document.getElementById('searchBar');
-const eventsContainer = document.getElementById('eventsContainer');
-const eventCreationSection = document.getElementById('eventCreationSection');
-const authSection = document.getElementById('authSection');
+let events = [];
 
-// User and Event Storage
-let currentUser = null;
-let events = JSON.parse(localStorage.getItem('events')) || [];
-
-// Handle User Login
-authForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  currentUser = document.getElementById('username').value;
-  if (currentUser) {
-    alert(`Welcome, ${currentUser}!`);
-    authSection.classList.add('d-none');
-    eventCreationSection.classList.remove('d-none');
-    displayEvents();
-  }
-});
-
-// Handle Event Creation
-eventForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const eventName = document.getElementById('eventName').value;
-  const eventDate = document.getElementById('eventDate').value;
-  const eventDescription = document.getElementById('eventDescription').value;
-
-  const newEvent = {
-    id: Date.now(),
-    name: eventName,
-    date: eventDate,
-    description: eventDescription,
-    registrants: [],
-  };
-
-  events.push(newEvent);
-  localStorage.setItem('events', JSON.stringify(events));
-  eventForm.reset();
-  displayEvents();
-});
-
-// Display Events
-function displayEvents(searchQuery = '') {
-  eventsContainer.innerHTML = '';
-  const filteredEvents = events.filter((event) =>
-    event.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  filteredEvents.forEach((event) => {
-    const eventCard = document.createElement('div');
-    eventCard.className = 'col-md-4';
-    eventCard.innerHTML = `
-      <div class="card p-3">
-        <h5 class="card-title">${event.name}</h5>
-        <p><strong>Date:</strong> ${event.date}</p>
-        <p>${event.description}</p>
-        <button class="btn btn-primary" onclick="registerForEvent(${event.id})">Register</button>
-        <button class="btn btn-secondary mt-2" onclick="viewRegistrants(${event.id})">View Registrants</button>
-      </div>
-    `;
-    eventsContainer.appendChild(eventCard);
-  });
-}
-
-// Register for an Event
-function registerForEvent(eventId) {
-  const event = events.find((e) => e.id === eventId);
-  if (event) {
-    if (!event.registrants.includes(currentUser)) {
-      event.registrants.push(currentUser);
-      localStorage.setItem('events', JSON.stringify(events));
-      alert('Registration successful!');
-    } else {
-      alert('You are already registered for this event.');
+// Load events from local storage
+function loadEvents() {
+    const storedEvents = localStorage.getItem('events');
+    if (storedEvents) {
+        events = JSON.parse(storedEvents);
     }
-  }
 }
 
-// View Registrants
-function viewRegistrants(eventId) {
-  const event = events.find((e) => e.id === eventId);
-  if (event) {
-    alert(`Registrants for ${event.name}:\n${event.registrants.join('\n') || 'No registrants yet.'}`);
-  }
+// Save events to local storage
+function saveEvents() {
+    localStorage.setItem('events', JSON.stringify(events));
 }
 
-// Handle Search
-searchBar.addEventListener('input', (e) => {
-  displayEvents(e.target.value);
+// Render the event list, sorted by date and time
+function renderEventList() {
+    const eventList = document.getElementById('event-list');
+    eventList.innerHTML = '';
+    const sortedEvents = events.slice().sort((a, b) => {
+        if (a.date === b.date) return a.time.localeCompare(b.time);
+        return a.date.localeCompare(b.date);
+    });
+    sortedEvents.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('event');
+        eventDiv.innerHTML = `
+            <h2>${event.title}</h2>
+            <p>${event.date} at ${event.time}</p>
+            <p>${event.description.substring(0, 100)}...</p>
+            <button onclick="viewDetails('${event.id}')">View Details</button>
+            <button onclick="deleteEvent('${event.id}')">Delete</button>
+        `;
+        eventList.appendChild(eventDiv);
+    });
+}
+
+// View event details
+function viewDetails(id) {
+    location.hash = `#details/${id}`;
+}
+
+// Render event details
+function renderEventDetails(id) {
+    const event = events.find(e => e.id === id);
+    const detailsDiv = document.getElementById('event-details');
+    if (event) {
+        detailsDiv.innerHTML = `
+            <h2>${event.title}</h2>
+            <p>Date: ${event.date}</p>
+            <p>Time: ${event.time}</p>
+            <p>Location: ${event.location}</p>
+            <p>${event.description}</p>
+        `;
+    } else {
+        detailsDiv.innerHTML = '<p>Event not found.</p>';
+    }
+}
+
+// Delete an event
+function deleteEvent(id) {
+    if (confirm('Are you sure you want to delete this event?')) {
+        events = events.filter(e => e.id !== id);
+        saveEvents();
+        renderEventList();
+    }
+}
+
+// Handle form submission to create a new event
+document.getElementById('event-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const newEvent = {
+        id: Date.now().toString(),
+        title: document.getElementById('title').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+        location: document.getElementById('location').value,
+        description: document.getElementById('description').value
+    };
+    events.push(newEvent);
+    saveEvents();
+    this.reset();
+    location.hash = '#home';
 });
 
-// Initial Load
-displayEvents();
+// Show the appropriate section based on the hash
+function showSection(sectionId) {
+    document.querySelectorAll('main > section').forEach(section => {
+        section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+// Handle hash changes for navigation
+window.addEventListener('hashchange', function() {
+    const hash = location.hash;
+    if (hash === '#home' || hash === '') {
+        showSection('home');
+        renderEventList();
+    } else if (hash.startsWith('#details/')) {
+        const id = hash.split('/')[1];
+        showSection('details');
+        renderEventDetails(id);
+    } else if (hash === '#create') {
+        showSection('create');
+    } else {
+        showSection('home');
+        renderEventList();
+    }
+});
+
+// Initial load
+loadEvents();
+if (location.hash === '#home' || location.hash === '') {
+    showSection('home');
+    renderEventList();
+} else if (location.hash.startsWith('#details/')) {
+    const id = location.hash.split('/')[1];
+    showSection('details');
+    renderEventDetails(id);
+} else if (location.hash === '#create') {
+    showSection('create');
+}
