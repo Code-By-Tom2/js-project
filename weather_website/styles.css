@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+#geolocation-btn {
+    margin: 10px 0;
+}
+
+#loading {
+    display: none;
+    margin: 10px 0;
+}
+
+#error {
+    color: red;
+    display: none;
+    margin: 10px 0;
+}
+
+#current-weather, #forecast {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#forecast div {
+    display: inline-block;
+    margin: 10px;
+}
