@@ -1,0 +1,169 @@
+/* Reset default styles and set a modern font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Add this via Google Fonts */
+}
+
+/* Body styling */
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700; /* Gold hover effect */
+}
+
+/* Events section */
+#events {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+#events h2 {
+    font-size: 2em;
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+/* Event card styling */
+.event-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    margin: 1em auto;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    font-size: 1.5em;
+    color: #2a5298;
+    margin-bottom: 0.5em;
+}
+
+.event-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 0.8em;
+}
+
+.event-card button {
+    background-color: #2a5298;
+    color: white;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.event-card button:hover {
+    background-color: #1e3c72;
+}
+
+/* Form styling (for adding events) */
+#events div:last-child {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    margin: 2em auto;
+    max-width: 350px;
+}
+
+#events h3 {
+    font-size: 1.5em;
+    color: #2a5298;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#events input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#events input:focus {
+    border-color: #2a5298;
+}
+
+#events button {
+    background-color: #2a5298;
+    color: white;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#events button:hover {
+    background-color: #1e3c72;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1e3c72;
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+    margin-top: 2em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .event-card {
+        max-width: 100%;
+    }
+}
