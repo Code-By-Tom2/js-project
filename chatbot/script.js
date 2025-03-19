@@ -22,7 +22,7 @@ function sendMessage() {
     const botResponse = getBotResponse(message.toLowerCase());
     setTimeout(() => {
         addMessage(botResponse, 'bot-message');
-    }, 1000); // Delay bot response by 1 second
+    }, 1000);
     
     userInput.value = '';
 }

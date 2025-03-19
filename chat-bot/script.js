@@ -13,7 +13,6 @@ async function sendMessage() {
     const message = userInput.value.trim();
     if (!message) return;
 
-    // Add user message
     addMessage(message, 'user');
     userInput.value = '';
 

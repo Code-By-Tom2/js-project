@@ -12,7 +12,7 @@ function getAIChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// Determine the winner
+
 function getResult(playerChoice, aiChoice) {
   if (playerChoice === aiChoice) return "draw";
   if (

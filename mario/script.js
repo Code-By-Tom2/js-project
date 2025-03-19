@@ -22,7 +22,6 @@ backgroundImg.src = "background.jpg";
 const coinImg = new Image();
 coinImg.src = "coin.png";
 
-// Mario
 const mario = {
   x: 50,
   y: 300,

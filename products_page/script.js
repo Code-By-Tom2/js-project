@@ -5,7 +5,6 @@ const productsDiv = document.getElementById('products');
 // Array to store products
 let products = [];
 
-// Add event listener for form submission
 productForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
