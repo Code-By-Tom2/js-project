@@ -18,7 +18,6 @@ function sendMessage() {
     // Add user message
     addMessage(message, 'user-message');
     
-    // Get bot response
     const botResponse = getBotResponse(message.toLowerCase());
     setTimeout(() => {
         addMessage(botResponse, 'bot-message');

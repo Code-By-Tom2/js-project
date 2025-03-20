@@ -6,7 +6,6 @@ let score = 0;
 let level = 1;
 let gameRunning = true;
 
-// Load assets
 const marioImg = new Image();
 marioImg.src = "mario.png";
 

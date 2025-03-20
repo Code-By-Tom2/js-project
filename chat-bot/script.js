@@ -16,7 +16,6 @@ async function sendMessage() {
     addMessage(message, 'user');
     userInput.value = '';
 
-    // Display typing indicator
     const typingIndicator = document.createElement('div');
     typingIndicator.classList.add('bot-typing');
     typingIndicator.textContent = 'Typing...';

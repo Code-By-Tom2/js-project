@@ -6,7 +6,6 @@ const aiScoreSpan = document.getElementById("ai-score");
 let playerScore = 0;
 let aiScore = 0;
 
-// AI makes a random choice
 function getAIChoice() {
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * choices.length)];

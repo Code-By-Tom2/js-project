@@ -6,7 +6,7 @@ const productsDiv = document.getElementById('products');
 let products = [];
 
 productForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     // Get input values
     const name = document.getElementById('name').value;
