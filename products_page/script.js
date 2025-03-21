@@ -8,7 +8,7 @@ let products = [];
 productForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Get input values
+
     const name = document.getElementById('name').value;
     const description = document.getElementById('description').value;
     const price = parseFloat(document.getElementById('price').value);

@@ -49,9 +49,7 @@ const mario = {
     if (this.x < 0) this.x = 0;
     if (this.x + this.width > canvas.width) this.x = canvas.width - this.width;
   },
-};
-
-// Enemies
+}
 const goombas = [
   { x: 400, y: 350, width: 40, height: 40, dx: -2 },
 ];

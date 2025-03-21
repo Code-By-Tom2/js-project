@@ -22,7 +22,6 @@ async function sendMessage() {
     chatMessages.appendChild(typingIndicator);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    // Call the backend API
     try {
         const response = await fetch('http://127.0.0.1:5000/chat', {
             method: 'POST',
