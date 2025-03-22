@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.card {
+    width: 60px;
+    height: 90px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.red { background-color: #ff4d4d; color: white; }
+.green { background-color: #4dff4d; color: black; }
+.blue { background-color: #4d4dff; color: white; }
+.yellow { background-color: #ffff4d; color: black; }
+.wild { background-color: #333; color: white; }
+
+#discard-pile, #computer-hand, #player-hand {
+    min-height: 100px;
+    margin: 20px 0;
+}
+
+#controls button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#controls button:hover {
+    background-color: #0056b3;
+}
+
+#message {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+#color-chooser button {
+    padding: 8px 16px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#color-chooser button:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}

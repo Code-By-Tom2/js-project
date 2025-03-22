@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Uno Game</h1>
+        <div id="discard-pile"></div>
+        <div id="computer-hand"></div>
+        <div id="player-hand"></div>
+        <div id="controls">
+            <button id="draw-button">Draw Card</button>
+            <button id="pass-button">Pass</button>
+        </div>
+        <div id="message"></div>
+        <div id="color-chooser" class="hidden">
+            <button data-color="red">Red</button>
+            <button data-color="green">Green</button>
+            <button data-color="blue">Blue</button>
+            <button data-color="yellow">Yellow</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
