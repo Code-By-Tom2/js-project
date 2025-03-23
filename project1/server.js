@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Sample Data (This could come from a database in a real app)
 const courses = [
     {
         id: 1,

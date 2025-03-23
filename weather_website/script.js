@@ -1,6 +1,5 @@
-const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your OpenWeatherMap API key
+const apiKey = 'bc684fae3120dc80d09629437ae5de55';
 
-// Event listeners
 document.getElementById('search-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const city = document.getElementById('city-input').value;
@@ -21,9 +20,8 @@ document.getElementById('geolocation-btn').addEventListener('click', function() 
     }
 });
 
-// Fetch coordinates from city name
 async function getCoordinates(city) {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${bc684fae3120dc80d09629437ae5de55}`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('City not found');
@@ -38,7 +36,8 @@ async function getCoordinates(city) {
 
 // Fetch weather data from coordinates
 async function getWeatherData(lat, lon) {
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&units=metric&appid=${bc684fae3120dc80d09629437ae5de55
+    }`;
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error('Weather data not available');

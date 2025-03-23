@@ -1,6 +1,5 @@
 let youtubePlayer;
 
-// Load YouTube Player API
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('youtubePlayer', {
         height: '200',
@@ -12,7 +11,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-// Play/Pause YouTube Video
+
 document.getElementById("playPauseBtn").addEventListener("click", function () {
     if (youtubePlayer.getPlayerState() === 1) {
         youtubePlayer.pauseVideo();
@@ -21,7 +20,6 @@ document.getElementById("playPauseBtn").addEventListener("click", function () {
     }
 });
 
-// Search Functionality
 document.getElementById("searchBtn").addEventListener("click", function () {
     let query = document.getElementById("searchInput").value.trim();
     if (query === "") {
@@ -33,7 +31,6 @@ document.getElementById("searchBtn").addEventListener("click", function () {
     searchSpotify(query);
 });
 
-// Search YouTube Video (Fix: Added Working Query)
 function searchYouTube(query) {
     const YOUTUBE_API_KEY = "AIzaSyAR0RR0QOx_LhIPs7FkdmS5wh-CEQQT5iQ"; // 🔑 Replace with Your YouTube API Key
 
