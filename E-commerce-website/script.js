@@ -28,7 +28,6 @@ const products = [
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Utility Functions
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
@@ -39,7 +38,6 @@ function updateCartCount() {
     );
 }
 
-// Homepage
 function displayProducts() {
     const productGrid = document.getElementById("product-grid");
     productGrid.innerHTML = "";

@@ -10,7 +10,7 @@ const birdImages = [
 
 const pipeImages = [
     'pipe1.png',   // First pipe style
-    'pipe2.png',   // Second pipe style
+    'pipe2.png',  
 ];
 
 const backgroundImages = [

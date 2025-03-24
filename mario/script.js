@@ -58,7 +58,6 @@ const koopas = [
   { x: 600, y: 350, width: 40, height: 40, dx: -2, shell: false },
 ];
 
-// Coins
 const coins = [
   { x: 200, y: 300, width: 20, height: 20 },
   { x: 500, y: 250, width: 20, height: 20 },
