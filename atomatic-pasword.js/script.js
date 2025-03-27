@@ -8,4 +8,4 @@ function generatePassword(length) {
     return password;
 }
 
-console.log(generatePassword(12)); // Generates a 12-character random password
+console.log(generatePassword(12));

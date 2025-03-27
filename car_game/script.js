@@ -118,7 +118,6 @@ function startGame() {
     gameOverScreen.style.display = 'none';
     scoreDisplay.textContent = `Score: 0`;
 
-    // Reset obstacle pool
     obstaclePool.forEach(obstacle => {
         obstacle.element.style.display = 'none';
         obstacle.inUse = false;
@@ -126,7 +125,6 @@ function startGame() {
     obstacles.forEach(obstacle => obstacle.element.remove()); // Clear any leftover obstacles
     obstacles = [];
 
-    // Start game loops
     gameInterval = setInterval(gameLoop, 20);
     obstacleInterval = setInterval(createObstacle, 1500); // Slightly faster spawn rate
 }

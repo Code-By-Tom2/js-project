@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             dealerScore.textContent = `Score: ${dealerTotal}`;
         }
 
-        // Determine winner
         const playerTotal = calculateHand(playerHand);
         if (dealerTotal > 21) {
             endGame('Dealer busts! Player wins!');
@@ -155,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // End the game
     function endGame(result) {
         hitButton.disabled = true;
         standButton.disabled = true;
@@ -163,9 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message.textContent = result;
     }
 
-    // Start a new game
     newGameButton.addEventListener('click', startGame);
 
-    // Initialize the game
     startGame();
 });

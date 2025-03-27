@@ -1,12 +1,10 @@
 const clock = document.querySelector('.clock');
 
-// Add numbers 1 to 12 around the clock
 for (let n = 1; n <= 12; n++) {
     const numberDiv = document.createElement('div');
     numberDiv.className = 'number';
     numberDiv.textContent = n;
 
-    // Calculate position (radius = 90px from center)
     const angle = n * 30; // 360° / 12 = 30° per number
     const rad = angle * Math.PI / 180; // Convert to radians
     const x = 100 + 90 * Math.sin(rad); // Center (100px) + radius * sin
