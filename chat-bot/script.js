@@ -15,7 +15,7 @@ async function sendMessage() {
 
     addMessage(message, 'user');
     userInput.value = '';
-
+// input
     const typingIndicator = document.createElement('div');
     typingIndicator.classList.add('bot-typing');
     typingIndicator.textContent = 'Typing...';

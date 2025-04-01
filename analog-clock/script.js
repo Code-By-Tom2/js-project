@@ -10,7 +10,6 @@ for (let n = 1; n <= 12; n++) {
     const x = 100 + 90 * Math.sin(rad); // Center (100px) + radius * sin
     const y = 100 - 90 * Math.cos(rad); // Center (100px) - radius * cos
 
-    // Position and rotate the number
     numberDiv.style.left = `${x - 10}px`; // Adjust for width/2
     numberDiv.style.top = `${y - 10}px`;  // Adjust for height/2
     numberDiv.style.transform = `rotate(${angle}deg)`; // Rotate so base faces center

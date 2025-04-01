@@ -3,7 +3,6 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Game variables
 const basket = {
   x: canvas.width / 2 - 50,
   y: canvas.height - 80,
